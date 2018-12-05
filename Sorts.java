@@ -1,5 +1,5 @@
 public class Sorts{
-  public static void selectionSort(int [] ary) {
+  /*public static void selectionSort(int [] ary) {
     for (int i = 0; i < ary.length; i++){
       int minLoc = i;
       //loop to find the smallest first
@@ -12,7 +12,55 @@ public class Sorts{
       ary[i] = ary[minLoc]; //replace the value of ary with the smallest
       ary[minLoc] = frontValue; //switch place between the smallest and the frontValue
     }
-  }
+  }*/
+
+  // 12/5;
+  public static void selectionSort(int [] ary) {
+    //loop that runs n times
+    for (int i = 0; i < ary.length; i++){
+      int minLoc = i;
+      //loop to find the smallest first
+      for (int j = i+1; j < ary.length; j++){
+        if (ary[j] < ary[minLoc]){
+          minLoc = j;
+        }
+      }
+      //remove the smallest:
+      int[] w  = new int[ary.length - 1];
+      boolean pass = false;
+      int removed = ary[minLoc];
+      for (int y = 0; y < w.length; y++) {
+        if (y == minLoc || pass) {
+          w[y] = ary[y+1];
+          pass = true;
+        }
+        else {
+          w[y] = ary[y];
+        }
+      }
+
+      ary = w; //edited ary to the newest without smallest value
+      //to add the removed smallest:
+      pass = false;
+      int[] k = new int[ary.length + 1];
+      for (int z = 0; z < k.length; z++) {
+        if (pass) {
+          k[z] = ary[z-1];
+        }
+        else if (z == i) {
+          k[z] = removed;
+          pass = true;
+        }
+        else {
+          k[z] = ary[z];
+        }
+      }
+      ary = k;
+      //GOAL : ary.add(i, ary.remove(minLoc));
+    }
+    //System.out.println("final ary version: " + printArray(ary)); //this give the sorted version but doesn't edit the orginal input
+    //ERROR!!! THE CODE DOESN't EDIT THE ARY FOR UNKNOWN REASON
+}
 
 //CODE BORROW FROM Timothy So and Lauren Pehlivanian from Google Group + Inspiration from Timophy's code
 
