@@ -1,6 +1,5 @@
 public class Sorts{
   public static void selectionSort(int [] ary) {
-    //loop that runs n times
     for (int i = 0; i < ary.length; i++){
       int minLoc = i;
       //loop to find the smallest first
@@ -9,48 +8,14 @@ public class Sorts{
           minLoc = j;
         }
       }
-      //remove the smallest:
-      int[] w  = new int[ary.length - 1];
-      boolean pass = false;
-      int removed = ary[minLoc];
-      for (int y = 0; y < w.length; y++) {
-        if (y == minLoc || pass) {
-          w[y] = ary[y+1];
-          pass = true;
-        }
-        else {
-          w[y] = ary[y];
-        }
-      }
-
-      ary = w; //edited ary to the newest without smallest value
-      //to add the removed smallest:
-      pass = false;
-      int[] k = new int[ary.length + 1];
-      for (int z = 0; z < k.length; z++) {
-        if (pass) {
-          k[z] = ary[z-1];
-        }
-        else if (z == i) {
-          k[z] = removed;
-          pass = true;
-        }
-        else {
-          k[z] = ary[z];
-        }
-      }
-      ary = k;
-      //GOAL : ary.add(i, ary.remove(minLoc));
+      int frontValue = ary[i]; //store the value of ary
+      ary[i] = ary[minLoc]; //replace the value of ary with the smallest
+      ary[minLoc] = frontValue; //switch place between the smallest and the frontValue
     }
-    for (int i = 0; i < ary.length; i++){
-      int minLoc = i;
-      //loop to find the smallest first
-      for (int j = i+1; j < ary.length; j++){
-        if (ary[j] < ary[minLoc]){
-          minLoc = j;
-        }
-      }
   }
+
+//CODE BORROW FROM Timothy So and Lauren Pehlivanian from Google Group + Inspiration from Timophy's code
+
   public static String printArray(int[] ary) {
       String output = "[";
       for(int i=0; i<ary.length-1; i++) {
