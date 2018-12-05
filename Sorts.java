@@ -16,50 +16,57 @@ public class Sorts{
 
   // 12/5;
   public static void selectionSort(int [] ary) {
-    //loop that runs n times
-    for (int i = 0; i < ary.length; i++){
+    //create a new ary to modify:
+    int[] sorted = new int[ary.length];
+    for (int s = 0; s < sorted.length; s++){
+      sorted[s] = ary[s];
+    }
+    //now sorted should be same as ary
+    //modify sorted
+    for (int i = 0; i < sorted.length; i++){
       int minLoc = i;
       //loop to find the smallest first
-      for (int j = i+1; j < ary.length; j++){
-        if (ary[j] < ary[minLoc]){
+      for (int j = i+1; j < sorted.length; j++){
+        if (sorted[j] < sorted[minLoc]){
           minLoc = j;
         }
       }
       //remove the smallest:
-      int[] w  = new int[ary.length - 1];
+      int[] w  = new int[sorted.length - 1];
       boolean pass = false;
-      int removed = ary[minLoc];
+      int removed = sorted[minLoc];
       for (int y = 0; y < w.length; y++) {
         if (y == minLoc || pass) {
-          w[y] = ary[y+1];
+          w[y] = sorted[y+1];
           pass = true;
         }
         else {
-          w[y] = ary[y];
+          w[y] = sorted[y];
         }
       }
-
-      ary = w; //edited ary to the newest without smallest value
+      sorted = w; //edited ary to the newest without smallest value
       //to add the removed smallest:
       pass = false;
-      int[] k = new int[ary.length + 1];
+      int[] k = new int[sorted.length + 1];
       for (int z = 0; z < k.length; z++) {
         if (pass) {
-          k[z] = ary[z-1];
+          k[z] = sorted[z-1];
         }
         else if (z == i) {
           k[z] = removed;
           pass = true;
         }
         else {
-          k[z] = ary[z];
+          k[z] = sorted[z];
         }
       }
-      ary = k;
+      sorted = k;
       //GOAL : ary.add(i, ary.remove(minLoc));
     }
-    //System.out.println("final ary version: " + printArray(ary)); //this give the sorted version but doesn't edit the orginal input
-    //ERROR!!! THE CODE DOESN't EDIT THE ARY FOR UNKNOWN REASON
+    //now modify ary to sorted:
+    for (int s = 0; s < sorted.length; s++){
+      ary[s] = sorted[s];
+    }
 }
 
 //CODE BORROW FROM Timothy So and Lauren Pehlivanian from Google Group + Inspiration from Timophy's code
@@ -169,4 +176,5 @@ public class Sorts{
       }
 
     }
+
 }
