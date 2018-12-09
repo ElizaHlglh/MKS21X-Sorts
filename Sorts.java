@@ -82,7 +82,20 @@ public class Sorts{
   public static void bubbleSort(int[] data){
     //one loop, no isSort!
     int count = 0;
-    
+    boolean isSorted = false;
+    while (!isSorted){
+      for (int i = 0; i < data.length-1; i++){ //loop to move the largest lavue to the back every time
+        if (data[i] > data[i+1]){
+          int smaller = data[i+1];
+          data[i+1] = data[i];  //move the larger value to next spot
+          data[i] = smaller;  //move the smaller value to the front;
+        }
+      }
+      count++;
+      if (count >= data.length){  //the array should be sorted after it loops for the length of itself:
+        isSorted = true;    // the smallest value can travel from the back to front;
+      }
+    }
   }
 
 //CODE BORROW FROM Timothy So and Lauren Pehlivanian from Google Group + Inspiration from Timophy's code
