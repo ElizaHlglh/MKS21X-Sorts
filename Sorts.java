@@ -72,7 +72,6 @@ public class Sorts{
       ary[i] = ary[minLoc]; //replace the value of ary with the smallest
       ary[minLoc] = frontValue; //switch place between the smallest and the frontValue
     }
-    System.out.println(printArray(ary));
   }
 
   /**Bubble sort of an int array.
@@ -97,7 +96,6 @@ public class Sorts{
         isSorted = true;    // the smallest value can travel from the back to front;
       }
     }
-    System.out.println(printArray(ary));
   }
 
 //CODE BORROW FROM Timothy So and Lauren Pehlivanian from Google Group + Inspiration from Timophy's code
@@ -115,10 +113,215 @@ public class Sorts{
     for (int i = 0; i<randish.length; i++){
       randish[i] = (int)(Math.random()*100);
     }
+    //System.out.println(printArray(randish));
 
-    if(args[1].equals("selection"))selectionSort(randish);
-    if(args[1].equals("bubble"))bubbleSort(randish);
+    if(args[1].equals("selection")){
+      selectionSort(randish);
+      //System.out.println(printArray(randish)); TESTING PURPOSE
+    }
+    if(args[1].equals("bubble")){
+      bubbleSort(randish);
+      //System.out.println(printArray(randish));
+    }
       // Google random int generator
+
+
+
+/*TESTING SELECTIONSORT:
+
+
+System.out.println("TESTING SELECTIONSORT: ");
+String sorted = "";
+
+// 8 nums, [0:10]
+int[] test_a = { 3, 4, 7, 1, 6, 2, 8, 6 };
+System.out.println(printArray(test_a));               // [3, 4, 7, 1, 6, 2, 8, 6]
+
+selectionSort(test_a);
+
+sorted = printArray(test_a);
+System.out.println(sorted);               // [1, 2, 3, 4, 6, 6, 7, 8]
+
+if(sorted.equals("[1, 2, 3, 4, 6, 6, 7, 8]")) {
+System.out.println("TEST CASE - PASS");
+} else {
+System.out.println("TEST CASE - FAIL");
+}
+
+// 12 nums, [0:20]
+int[] test_b = { 17, 1, 19, 2, 18, 20, 1, 18, 11, 13, 5, 17 };
+System.out.println(printArray(test_b));   // [17, 1, 19, 2, 18, 20, 1, 18, 11, 13, 5, 17]
+
+selectionSort(test_b);
+
+sorted = printArray(test_b);
+System.out.println(sorted);               // [1, 1, 2, 5, 11, 13, 17, 17, 18, 18, 19, 20]
+
+if(sorted.equals("[1, 1, 2, 5, 11, 13, 17, 17, 18, 18, 19, 20]")) {
+System.out.println("TEST CASE - PASS");
+} else {
+System.out.println("TEST CASE - FAIL");
+}
+
+// 20 nums, [0:100]
+int[] test_c = { 14, 32, 19, 66, 61, 96, 33, 48, 30, 100, 65, 37, 15, 85, 1, 35, 9, 57, 50, 52 };
+System.out.println(printArray(test_c));   // [14, 32, 19, 66, 61, 96, 33, 48, 30, 100, 65, 37, 15, 85, 1, 35, 9, 57, 50, 52]
+
+selectionSort(test_c);
+
+sorted = printArray(test_c);
+System.out.println(sorted);               // [1, 9, 14, 15, 19, 30, 32, 33, 35, 37, 48, 50, 52, 57, 61, 65, 66, 85, 96, 100]
+
+if(sorted.equals("[1, 9, 14, 15, 19, 30, 32, 33, 35, 37, 48, 50, 52, 57, 61, 65, 66, 85, 96, 100]")) {
+System.out.println("TEST CASE - PASS");
+} else {
+System.out.println("TEST CASE - FAIL");
+}
+
+//TEST D
+int[] test_d = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+System.out.println(printArray(test_d));
+
+selectionSort(test_d);
+
+sorted = printArray(test_d);
+System.out.println(sorted);
+
+if(sorted.equals("[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]")) {
+System.out.println("TEST CASE - PASS");
+} else {
+System.out.println("TEST CASE - FAIL");
+}
+
+//TEST E
+int[] test_e = {0,0,0,0,0};
+System.out.println(printArray(test_e));
+
+selectionSort(test_e);
+
+sorted = printArray(test_e);
+System.out.println(sorted);
+
+if(sorted.equals("[0, 0, 0, 0, 0]")) {
+System.out.println("TEST CASE - PASS");
+} else {
+System.out.println("TEST CASE - FAIL");
+}
+
+//TEST F
+int[] test_f = {5,4,3,2,1};
+System.out.println(printArray(test_f));
+
+selectionSort(test_f);
+
+sorted = printArray(test_f);
+System.out.println(sorted);
+
+if(sorted.equals("[1, 2, 3, 4, 5]")) {
+System.out.println("TEST CASE - PASS");
+} else {
+System.out.println("TEST CASE - FAIL");
+}
+*/
+
+
+//TESTING BUBBLESORT:
+
+
+/*
+System.out.println("TESTING BUBBLESORT: ");
+String sorted1 = "";
+
+// 8 nums, [0:10]
+int[] test_a1 = { 3, 4, 7, 1, 6, 2, 8, 6 };
+System.out.println(printArray(test_a1));               // [3, 4, 7, 1, 6, 2, 8, 6]
+
+bubbleSort(test_a1);
+
+sorted1 = printArray(test_a1);
+System.out.println(sorted1);               // [1, 2, 3, 4, 6, 6, 7, 8]
+
+if(sorted1.equals("[1, 2, 3, 4, 6, 6, 7, 8]")) {
+System.out.println("TEST CASE - PASS");
+} else {
+System.out.println("TEST CASE - FAIL");
+}
+
+// 12 nums, [0:20]
+int[] test_b1 = { 17, 1, 19, 2, 18, 20, 1, 18, 11, 13, 5, 17 };
+System.out.println(printArray(test_b1));   // [17, 1, 19, 2, 18, 20, 1, 18, 11, 13, 5, 17]
+
+bubbleSort(test_b1);
+
+sorted1 = printArray(test_b1);
+System.out.println(sorted1);               // [1, 1, 2, 5, 11, 13, 17, 17, 18, 18, 19, 20]
+
+if(sorted1.equals("[1, 1, 2, 5, 11, 13, 17, 17, 18, 18, 19, 20]")) {
+System.out.println("TEST CASE - PASS");
+} else {
+System.out.println("TEST CASE - FAIL");
+}
+
+// 20 nums, [0:100]
+int[] test_c1 = { 14, 32, 19, 66, 61, 96, 33, 48, 30, 100, 65, 37, 15, 85, 1, 35, 9, 57, 50, 52 };
+System.out.println(printArray(test_c1));   // [14, 32, 19, 66, 61, 96, 33, 48, 30, 100, 65, 37, 15, 85, 1, 35, 9, 57, 50, 52]
+
+bubbleSort(test_c1);
+
+sorted1 = printArray(test_c1);
+System.out.println(sorted1);               // [1, 9, 14, 15, 19, 30, 32, 33, 35, 37, 48, 50, 52, 57, 61, 65, 66, 85, 96, 100]
+
+if(sorted1.equals("[1, 9, 14, 15, 19, 30, 32, 33, 35, 37, 48, 50, 52, 57, 61, 65, 66, 85, 96, 100]")) {
+System.out.println("TEST CASE - PASS");
+} else {
+System.out.println("TEST CASE - FAIL");
+}
+
+//TEST D
+int[] test_d1 = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+System.out.println(printArray(test_d1));
+
+bubbleSort(test_d1);
+
+sorted1 = printArray(test_d1);
+System.out.println(sorted1);
+
+if(sorted1.equals("[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]")) {
+System.out.println("TEST CASE - PASS");
+} else {
+System.out.println("TEST CASE - FAIL");
+}
+
+//TEST E
+int[] test_e1 = {0,0,0,0,0};
+System.out.println(printArray(test_e1));
+
+bubbleSort(test_e1);
+
+sorted1 = printArray(test_e1);
+System.out.println(sorted1);
+
+if(sorted1.equals("[0, 0, 0, 0, 0]")) {
+System.out.println("TEST CASE - PASS");
+} else {
+System.out.println("TEST CASE - FAIL");
+}
+
+//TEST F
+int[] test_f1 = {5,4,3,2,1};
+System.out.println(printArray(test_f1));
+
+bubbleSort(test_f1);
+
+sorted1 = printArray(test_f1);
+System.out.println(sorted1);
+
+if(sorted1.equals("[1, 2, 3, 4, 5]")) {
+System.out.println("TEST CASE - PASS");
+} else {
+System.out.println("TEST CASE - FAIL");
+}
+*/
 
     }
 
