@@ -72,6 +72,7 @@ public class Sorts{
       ary[i] = ary[minLoc]; //replace the value of ary with the smallest
       ary[minLoc] = frontValue; //switch place between the smallest and the frontValue
     }
+    System.out.println(printArray(ary));
   }
 
   /**Bubble sort of an int array.
@@ -79,23 +80,24 @@ public class Sorts{
   *@param data  the elements to be sorted.
   */
 
-  public static void bubbleSort(int[] data){
+  public static void bubbleSort(int[] ary){
     //one loop, no isSort!
     int count = 0;
     boolean isSorted = false;
     while (!isSorted){
-      for (int i = 0; i < data.length-1; i++){ //loop to move the largest lavue to the back every time
-        if (data[i] > data[i+1]){
-          int smaller = data[i+1];
-          data[i+1] = data[i];  //move the larger value to next spot
-          data[i] = smaller;  //move the smaller value to the front;
+      for (int i = 0; i < ary.length-1; i++){ //loop to move the largest lavue to the back every time
+        if (ary[i] > ary[i+1]){
+          int smaller = ary[i+1];
+          ary[i+1] = ary[i];  //move the larger value to next spot
+          ary[i] = smaller;  //move the smaller value to the front;
         }
       }
       count++;
-      if (count >= data.length){  //the array should be sorted after it loops for the length of itself:
+      if (count >= ary.length){  //the array should be sorted after it loops for the length of itself:
         isSorted = true;    // the smallest value can travel from the back to front;
       }
     }
+    System.out.println(printArray(ary));
   }
 
 //CODE BORROW FROM Timothy So and Lauren Pehlivanian from Google Group + Inspiration from Timophy's code
