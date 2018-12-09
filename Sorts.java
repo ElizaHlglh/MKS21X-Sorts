@@ -80,23 +80,10 @@ public class Sorts{
   */
 
   public static void bubbleSort(int[] data){
-    while (!isSorted(data)){
-      for (int i = 0; i < data.length; i++){
-        for (int index = 0; index < data.length-2; index++){
-        }
-      }
-    }
+    //one loop, no isSort!
+    int count = 0;
+    
   }
-
-  public boolean isSorted(int[] ary){
-    for (int i = 0; i < ary.length-1; i++){
-      if (ary[i] > ary[i+1]){
-        return false;
-      }
-    }
-    return true;
-  }
-
 
 //CODE BORROW FROM Timothy So and Lauren Pehlivanian from Google Group + Inspiration from Timophy's code
 
