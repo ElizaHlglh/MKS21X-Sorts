@@ -100,17 +100,28 @@ public class Sorts{
 
   public static void insertionSort(int[] ary){
     for (int i = 0; i < ary.length-1; i++){ //for every value
-      if (ary[i+1] < ary[i]){ //if the one behind the value is greater than before
-        for (int y = 0; y < ary.length; y++){ //find the index to place and push the values back
-
+      if (ary[i+1] < ary[i]){ //if the one behind the value is smaller than before
+        int smaller = ary[i+1];
+        for (int y = i+1; y > 0; y--){
+          if (ary[y-1] < smaller){
+            ary[y] = smaller;
+            y = 0; //to quit the loop that move the value for one slot
+          }
+          else if(y==1){ //when the program hasn't reach ?<smaller<? && smaller is smallest in the front section
+            ary[y] = ary[y-1];
+            ary[y-1] = smaller;
+          }
+          else{
+            ary[y] = ary[y-1];
+          }
         }
       }
     }
   }
 
 //CODE BORROW FROM Timothy So and Lauren Pehlivanian from Google Group + Inspiration from Timophy's code
-
-  /*public static String printArray(int[] ary) {
+/*
+  public static String printArray(int[] ary) {
       String output = "[";
       for(int i=0; i<ary.length-1; i++) {
         output += ary[i] + ", ";
@@ -333,6 +344,102 @@ System.out.println("TEST CASE - FAIL");
 }
 */
 
-//}
+/*
+System.out.println("TESTING INSERTIONSORT: ");
+String sorted1 = "";
 
+// 8 nums, [0:10]
+int[] test_a1 = { 3, 4, 7, 1, 6, 2, 8, 6 };
+System.out.println(printArray(test_a1));               // [3, 4, 7, 1, 6, 2, 8, 6]
+
+insertionSort(test_a1);
+
+sorted1 = printArray(test_a1);
+System.out.println(sorted1);               // [1, 2, 3, 4, 6, 6, 7, 8]
+
+if(sorted1.equals("[1, 2, 3, 4, 6, 6, 7, 8]")) {
+System.out.println("TEST CASE - PASS");
+} else {
+System.out.println("TEST CASE - FAIL");
+}
+
+
+
+// 12 nums, [0:20]
+int[] test_b1 = { 17, 1, 19, 2, 18, 20, 1, 18, 11, 13, 5, 17 };
+System.out.println(printArray(test_b1));   // [17, 1, 19, 2, 18, 20, 1, 18, 11, 13, 5, 17]
+
+insertionSort(test_b1);
+
+sorted1 = printArray(test_b1);
+System.out.println(sorted1);               // [1, 1, 2, 5, 11, 13, 17, 17, 18, 18, 19, 20]
+
+if(sorted1.equals("[1, 1, 2, 5, 11, 13, 17, 17, 18, 18, 19, 20]")) {
+System.out.println("TEST CASE - PASS");
+} else {
+System.out.println("TEST CASE - FAIL");
+}
+
+// 20 nums, [0:100]
+int[] test_c1 = { 14, 32, 19, 66, 61, 96, 33, 48, 30, 100, 65, 37, 15, 85, 1, 35, 9, 57, 50, 52 };
+System.out.println(printArray(test_c1));   // [14, 32, 19, 66, 61, 96, 33, 48, 30, 100, 65, 37, 15, 85, 1, 35, 9, 57, 50, 52]
+
+insertionSort(test_c1);
+
+sorted1 = printArray(test_c1);
+System.out.println(sorted1);               // [1, 9, 14, 15, 19, 30, 32, 33, 35, 37, 48, 50, 52, 57, 61, 65, 66, 85, 96, 100]
+
+if(sorted1.equals("[1, 9, 14, 15, 19, 30, 32, 33, 35, 37, 48, 50, 52, 57, 61, 65, 66, 85, 96, 100]")) {
+System.out.println("TEST CASE - PASS");
+} else {
+System.out.println("TEST CASE - FAIL");
+}
+
+//TEST D
+int[] test_d1 = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16};
+System.out.println(printArray(test_d1));
+
+insertionSort(test_d1);
+
+sorted1 = printArray(test_d1);
+System.out.println(sorted1);
+
+if(sorted1.equals("[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]")) {
+System.out.println("TEST CASE - PASS");
+} else {
+System.out.println("TEST CASE - FAIL");
+}
+
+//TEST E
+int[] test_e1 = {0,0,0,0,0};
+System.out.println(printArray(test_e1));
+
+insertionSort(test_e1);
+
+sorted1 = printArray(test_e1);
+System.out.println(sorted1);
+
+if(sorted1.equals("[0, 0, 0, 0, 0]")) {
+System.out.println("TEST CASE - PASS");
+} else {
+System.out.println("TEST CASE - FAIL");
+}
+
+//TEST F
+int[] test_f1 = {5,4,3,2,1};
+System.out.println(printArray(test_f1));
+
+insertionSort(test_f1);
+
+sorted1 = printArray(test_f1);
+System.out.println(sorted1);
+
+if(sorted1.equals("[1, 2, 3, 4, 5]")) {
+System.out.println("TEST CASE - PASS");
+} else {
+System.out.println("TEST CASE - FAIL");
+}
+*/
+
+//}
 }
