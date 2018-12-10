@@ -98,9 +98,19 @@ public class Sorts{
     }
   }
 
+  public static void insertionSort(int[] ary){
+    for (int i = 0; i < ary.length-1; i++){ //for every value
+      if (ary[i+1] < ary[i]){ //if the one behind the value is greater than before
+        for (int y = 0; y < ary.length; y++){ //find the index to place and push the values back
+
+        }
+      }
+    }
+  }
+
 //CODE BORROW FROM Timothy So and Lauren Pehlivanian from Google Group + Inspiration from Timophy's code
 
-  public static String printArray(int[] ary) {
+  /*public static String printArray(int[] ary) {
       String output = "[";
       for(int i=0; i<ary.length-1; i++) {
         output += ary[i] + ", ";
@@ -124,7 +134,7 @@ public class Sorts{
       //System.out.println(printArray(randish));
     }
       // Google random int generator
-
+*/
 
 
 /*TESTING SELECTIONSORT:
@@ -323,6 +333,6 @@ System.out.println("TEST CASE - FAIL");
 }
 */
 
-    }
+//}
 
 }
