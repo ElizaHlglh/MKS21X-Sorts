@@ -31,7 +31,7 @@ public class Driver{
       if( Arrays.equals(randish2,randish4)){
         System.out.println("Bubble Correct!");
       }
-      if( Arrays.equals(randish2,randish4)){
+      if( Arrays.equals(randish3,randish4)){
         System.out.println("Insertion Correct!");
       }
     }

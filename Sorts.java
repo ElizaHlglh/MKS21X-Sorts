@@ -98,7 +98,7 @@ public class Sorts{
     }
   }
 
-  public static void insertionSort(int[] ary){
+/*  public static void insertionSort(int[] ary){
     for (int i = 0; i < ary.length-1; i++){ //for every value
       if (ary[i+1] < ary[i]){ //if the one behind the value is smaller than before
         int smaller = ary[i+1];
@@ -118,10 +118,23 @@ public class Sorts{
       }
     }
   }
+*/
+  public static void insertionSort(int[] ary){
+    for (int i = 1; i < ary.length; i++){
+      int now = ary[i];
+      int index = i;
+      while(index!=0 && now < ary[index-1]){
+        ary[index] = ary[index-1];
+        index--;
+      }
+      ary[index] = now;
+    }
+  }
+
 
 //CODE BORROW FROM Timothy So and Lauren Pehlivanian from Google Group + Inspiration from Timophy's code
 /*
-  public static String printArray(int[] ary) {
+ public static String printArray(int[] ary) {
       String output = "[";
       for(int i=0; i<ary.length-1; i++) {
         output += ary[i] + ", ";
@@ -130,7 +143,8 @@ public class Sorts{
   }
 
   public static void main(String[] args) {
-    int[] randish = new int[Integer.parseInt(args[0])];
+*/
+/*    int[] randish = new int[Integer.parseInt(args[0])];
     for (int i = 0; i<randish.length; i++){
       randish[i] = (int)(Math.random()*100);
     }
@@ -343,6 +357,8 @@ System.out.println("TEST CASE - PASS");
 System.out.println("TEST CASE - FAIL");
 }
 */
+
+
 
 /*
 System.out.println("TESTING INSERTIONSORT: ");
